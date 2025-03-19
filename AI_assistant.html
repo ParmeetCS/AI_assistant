@@ -61,12 +61,11 @@
 
         .chat-messages::-webkit-scrollbar-track {
             background: #f1f1f1;
-            border-radius: 10px;
         }
 
         .chat-messages::-webkit-scrollbar-thumb {
             background: #888;
-            border-radius: 10px;
+            border-radius: 4px;
         }
         
         .message {
@@ -130,14 +129,13 @@
             border-radius: 30px;
             outline: none;
             font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
-            background: #f8f9fa;
         }
         
         .chat-input input:focus {
             border-color: #4a90e2;
-            box-shadow: 0 0 15px rgba(74, 144, 226, 0.15);
-            background: white;
+            box-shadow: 0 0 10px rgba(74, 144, 226, 0.1);
         }
         
         .chat-input button {
@@ -145,44 +143,34 @@
             color: white;
             border: none;
             border-radius: 30px;
-            padding: 15px 35px;
+            padding: 15px 30px;
             margin-left: 15px;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            box-shadow: 0 2px 10px rgba(74, 144, 226, 0.2);
         }
         
         .chat-input button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
-        }
-
-        .chat-input button:active {
-            transform: translateY(1px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
         }
         
         .typing-indicator {
             display: none;
             margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
+            padding: 10px;
         }
         
         .typing-indicator span {
-            height: 10px;
-            width: 10px;
+            height: 12px;
+            width: 12px;
             background-color: #4a90e2;
             border-radius: 50%;
             display: inline-block;
             margin: 0 3px;
-            animation: typing 1.2s infinite;
+            animation: typing 1s infinite;
         }
         
         .typing-indicator span:nth-child(2) {
@@ -200,42 +188,40 @@
         }
         
         .settings-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             background: rgba(255, 255, 255, 0.2);
             border: none;
             color: white;
             cursor: pointer;
-            font-size: 1.3rem;
-            padding: 10px;
+            font-size: 1.2rem;
+            padding: 8px;
             border-radius: 50%;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(5px);
         }
         
         .settings-button:hover {
             background: rgba(255, 255, 255, 0.3);
-            transform: rotate(90deg);
+            transform: rotate(45deg);
         }
         
         .settings-panel {
             display: none;
             position: absolute;
-            top: 80px;
-            right: 25px;
+            top: 70px;
+            right: 20px;
             background-color: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            padding: 25px;
             z-index: 100;
-            min-width: 350px;
-            animation: slideIn 0.4s ease;
-            backdrop-filter: blur(10px);
+            min-width: 300px;
+            animation: slideIn 0.3s ease;
         }
         
         @keyframes slideIn {
-            from { opacity: 0; transform: translateY(-20px); }
+            from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
@@ -244,42 +230,38 @@
             margin-bottom: 12px;
             font-weight: 600;
             color: #333;
-            font-size: 1.1rem;
         }
         
         .settings-panel input, .settings-panel select {
             width: 100%;
-            padding: 15px;
-            margin-bottom: 25px;
+            padding: 12px;
+            margin-bottom: 20px;
             border: 2px solid #eee;
-            border-radius: 12px;
-            font-size: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
-            background: #f8f9fa;
         }
         
         .settings-panel input:focus, .settings-panel select:focus {
             border-color: #4a90e2;
-            box-shadow: 0 0 15px rgba(74, 144, 226, 0.1);
-            background: white;
+            box-shadow: 0 0 10px rgba(74, 144, 226, 0.1);
         }
         
         .settings-panel button {
             background: linear-gradient(90deg, #4a90e2, #357abd);
             color: white;
             border: none;
-            border-radius: 12px;
-            padding: 15px 25px;
+            border-radius: 8px;
+            padding: 12px 20px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 1.1rem;
             width: 100%;
             transition: all 0.3s ease;
         }
         
         .settings-panel button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.2);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.2);
         }
         
         .show {
@@ -289,51 +271,30 @@
         .error-message {
             color: #e74c3c;
             text-align: center;
-            margin: 20px;
-            padding: 15px;
+            margin: 15px 0;
+            padding: 10px;
             background-color: #fde8e7;
-            border-radius: 12px;
+            border-radius: 8px;
             display: none;
             animation: shake 0.5s ease;
-            font-weight: 500;
         }
         
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-8px); }
-            75% { transform: translateX(8px); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
         }
 
-        @media (max-width: 992px) {
+        @media (max-width: 768px) {
             .chat-container {
                 width: 100%;
                 height: 100vh;
                 border-radius: 0;
             }
 
-            .settings-panel {
-                width: 90%;
-                max-width: none;
-                left: 50%;
-                transform: translateX(-50%);
-                border-radius: 15px;
-            }
-        }
-
-        @media (max-width: 768px) {
             .chat-header {
-                padding: 15px 20px;
-                font-size: 1.2rem;
-            }
-
-            .chat-messages {
-                padding: 20px;
-            }
-
-            .message {
-                max-width: 85%;
-                padding: 15px 20px;
-                font-size: 0.95rem;
+                font-size: 1.1rem;
+                padding: 15px;
             }
 
             .chat-input {
@@ -341,120 +302,38 @@
             }
 
             .chat-input input {
-                padding: 12px 20px;
+                padding: 12px;
                 font-size: 1rem;
             }
 
             .chat-input button {
-                padding: 12px 25px;
+                padding: 12px 20px;
                 font-size: 1rem;
             }
         }
 
         @media (max-width: 480px) {
-            body {
-                padding: 0;
-            }
-
             .chat-header {
-                padding: 12px 15px;
-                font-size: 1.1rem;
-            }
-
-            .chat-messages {
-                padding: 15px;
-            }
-
-            .message {
-                max-width: 90%;
-                padding: 12px 18px;
-                font-size: 0.9rem;
-                margin-bottom: 20px;
-            }
-
-            .chat-input {
+                font-size: 1rem;
                 padding: 12px;
             }
 
+            .chat-input {
+                padding: 10px;
+            }
+
             .chat-input input {
-                padding: 10px 15px;
+                padding: 10px;
                 font-size: 0.9rem;
             }
 
             .chat-input button {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-                margin-left: 10px;
-            }
-
-            .settings-panel {
-                min-width: unset;
-                width: 95%;
-                padding: 20px;
-            }
-
-            .settings-panel input, 
-            .settings-panel select, 
-            .settings-panel button {
-                padding: 12px;
+                padding: 10px 15px;
                 font-size: 0.9rem;
             }
-        }
-
-        @media (max-height: 600px) {
-            .chat-container {
-                height: 100vh;
-            }
-
+            
             .message {
-                margin-bottom: 15px;
-            }
-        }
-
-        /* Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
-            }
-
-            .chat-container {
-                background-color: #2c2c2c;
-            }
-
-            .chat-messages {
-                background-color: #1f1f1f;
-            }
-
-            .bot-message {
-                background: #333;
-                color: #fff;
-                border-color: #444;
-            }
-
-            .chat-input {
-                background-color: #2c2c2c;
-                border-top-color: #444;
-            }
-
-            .chat-input input {
-                background: #333;
-                color: #fff;
-                border-color: #444;
-            }
-
-            .settings-panel {
-                background-color: #2c2c2c;
-            }
-
-            .settings-panel label {
-                color: #fff;
-            }
-
-            .settings-panel input,
-            .settings-panel select {
-                background: #333;
-                color: #fff;
-                border-color: #444;
+                max-width: 90%;
             }
         }
     </style>
@@ -462,7 +341,7 @@
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            <span>AI Assistant</span>
+            AI Assistant
             <button class="settings-button">⚙️</button>
         </div>
         
@@ -506,7 +385,7 @@
         
         <div class="chat-input">
             <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off">
-            <button id="send-button">Send 📤</button>
+            <button id="send-button">Send</button>
         </div>
     </div>
 
